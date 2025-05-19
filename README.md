@@ -1,143 +1,114 @@
 # 🧠 DeblurProxy
 
-> **Real-time AI middleware that deblurs security camera feeds before they hit the screen.**
+**Real-time AI middleware that deblurs blurry security camera footage before it reaches the screen or storage.**
 
 ---
 
-##  Project Status: Planning Phase
+## 🚧 Project Status
 
-This project is currently in the design and planning phase. Implementation will begin shortly. The full pipeline — from AI model training to C++ deployment — has been scoped and outlined below.
-
----
-
-##  Overview
-
-**DeblurProxy** is an AI-powered middleware application designed to sit between a security camera and its monitor/recording system. It intercepts the video stream (via RTSP or HDMI), applies deep learning-based motion deblurring, and forwards the enhanced frames — all in real-time.
+**Planned** — Currently in the design and planning phase. Development to begin soon.
 
 ---
 
-##  Problem Statement
+## 🔍 Overview
 
-Most security camera footage suffers from:
-- **Motion blur** during fast movement (e.g., theft, scuffles)
-- **Low-light blur** at night
-- Poor quality that hinders **identification and evidence collection**
-
-Current surveillance solutions do not offer inline deblurring — enhancements are typically applied *after* recording, if at all.
+DeblurProxy is a real-time video enhancement system that sits between a security camera and a display or recording system. It intercepts RTSP or HDMI video feeds, processes them using a deep learning model to remove motion blur, and outputs the improved stream for monitoring or storage — all in real time.
 
 ---
 
-##  Goals
+## 🎯 Problem It Solves
 
-- Intercept camera streams using **RTSP or HDMI**
-- Deblur video in real time using an **AI model** (ONNX format)
-- Forward the enhanced output to a **monitor or recording system**
-- Run on desktops, edge devices, or embedded systems with low latency
-
----
-
-##  Key Features
-
-- Real-time AI deblurring using ONNX models (e.g., DeblurGANv2, U-Net)
-- Python for model training and prototyping
-- C++ for high-performance inference and display
-- Modular design with optional logging, overlays, and toggles
-- Extensible to HDMI input/output or smart NVR systems
+- Motion blur during fast movement (e.g., theft, running)
+- Low-light blur at night
+- Unreadable surveillance footage
+- No native real-time enhancement in most camera systems
 
 ---
 
-## 🧠 Architecture Diagram
+## 🚀 Goals
 
-[ Security Camera ]
-↓ (RTSP/HDMI)
-┌──────────────────────┐
-│ DeblurProxy │
-│ │
-│ + Frame Capture │
-│ + ONNX Inference │
-│ + Deblur Engine │
-│ + Live Display │
-└──────────────────────┘
-↓
-[ Monitor / Recording ]
+- Capture video stream via RTSP or HDMI
+- Deblur frames in real time using an AI model
+- Forward enhanced output to a monitor or recorder
+- Maintain low latency, edge compatibility, and modularity
+
+---
+
+
+![DeblurProxy WorkFlow](./assets/deblurproxy_workflow.png)
+
+
+## 🛠️ Key Features
+
+- Real-time ONNX model inference using C++ and OpenCV
+- Modular architecture for plug-and-play AI models
+- Python training pipeline with ONNX export
+- Optional frame overlays, toggles, and save modes
+- Designed to work without modifying existing camera hardware
+- Fully compatible with Raspberry Pi and other edge devices
 
 ---
 
 ## ⚙️ Tech Stack
 
-| Component         | Tool / Library                   |
-|------------------|-----------------------------------|
-| Model Training    | Python, PyTorch                   |
-| Model Export      | ONNX                              |
-| Real-Time Inference| C++, OpenCV, ONNX Runtime        |
-| Deployment        | CMake, Docker (optional)          |
-| Streaming Input   | RTSP (OpenCV, FFmpeg)             |
-| Optional UI       | Qt, SDL2, or CLI Overlay          |
+| Component           | Tool / Library            |
+|--------------------|---------------------------|
+| Model Training      | Python, PyTorch           |
+| Model Export        | ONNX                      |
+| Real-Time Inference | C++, OpenCV, ONNX Runtime |
+| Deployment          | CMake, Docker (optional)  |
+| Streaming Input     | RTSP (OpenCV, FFmpeg)     |
+| Display Output      | Monitor, Recorder         |
+| Platform Support    | Desktop, Raspberry Pi     |
 
 ---
 
-## 📁 Folder Structure (Planned)
+## 🗂️ Folder Structure (Planned)
 
-deblurproxy/
-├── python/ # Model training + ONNX export
-│ ├── train_model.py
-│ ├── export_onnx.py
-│ └── simulate_blur.py
-├── cpp/ # Real-time C++ inference
-│ ├── main.cpp
-│ ├── onnx_infer.cpp/.hpp
-│ └── video_stream.cpp
-├── models/ # Pretrained ONNX models
-├── test_videos/ # Sample blur videos
-├── deployment/ # Docker, CMakeLists
-├── README.md # This file
+- `python/` – Model training and ONNX export
+- `cpp/` – Real-time inference and display logic
+- `models/` – ONNX model files
+- `test_videos/` – Blurred samples for testing
+- `deployment/` – Build and packaging scripts
+- `README.md` – Project documentation
 
 ---
 
-## 📆 7-Day MVP Timeline
+## 📅 MVP Timeline (7-Day Plan)
 
-| Day | Milestone                                            |
+| Day | Task                                                 |
 |-----|------------------------------------------------------|
-| 1   | RTSP stream capture prototype (Python)               |
-| 2   | Model prep: DeblurGAN-lite download & testing        |
-| 3   | Python inference test on sample video                |
+| 1   | Set up RTSP capture (Python)                         |
+| 2   | Download/test pretrained deblurring model            |
+| 3   | Build Python pipeline to test blur → deblur          |
 | 4   | Export model to ONNX                                 |
-| 5   | Build C++ app with ONNX Runtime + OpenCV             |
-| 6   | Connect full pipeline: stream → deblur → display     |
-| 7   | Record demo, polish UI, package executable           |
+| 5   | Implement C++ inference using ONNX Runtime + OpenCV  |
+| 6   | Integrate full pipeline: input → deblur → output     |
+| 7   | Record demo video and polish code                    |
 
 ---
 
-##  Use Cases
+## 📌 Use Cases
 
-- 🏪 Retail store surveillance
-- 🚓 Police bodycam live enhancement
-- 🏦 Bank/ATM feeds for clearer evidence
-- 🚪 Smart home doorbell clarity
-- 🛰️ Drone or moving-camera stabilization
-- 🎬 Video forensics and post-production boost
-
----
-
-## Future Enhancements
-
-- HDMI input/output support with capture cards
-- Jetson Nano / Raspberry Pi 5 optimization
-- Optional GUI frontend for toggles & recording
-- Multi-camera dashboard + alerts
-- Real-time license plate / face zoom after deblur
+- Retail stores needing clear security footage
+- Police departments with bodycam feeds
+- Banks and ATMs requiring enhanced facial/video evidence
+- Doorbell and smart home cameras
+- Drone or robotic camera footage stabilization
+- Forensic analysts enhancing surveillance video
 
 ---
 
-## Why This Project Matters
+## 🔮 Future Enhancements
 
-- Solves a **real, neglected problem** in surveillance tech
-- Offers a **non-invasive upgrade** to existing camera systems
-- Demonstrates **AI, systems engineering, and deployment** in one package
-- Useful for security firms, law enforcement, retail, and beyond
+- HDMI pass-through support with capture cards
+- GPU optimization for Jetson, NVIDIA boards, or Coral TPU
+- Real-time zoom on faces or license plates
+- Web-based control panel for toggling settings
+- Saving both raw and deblurred feeds
 
 ---
 
-## Author
-**[Durga Deepak Valluri]**  
+## 👨‍💻 Author
+**Durga Deepak Valluri**  
 ---
