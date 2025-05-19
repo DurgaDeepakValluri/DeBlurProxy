@@ -34,6 +34,10 @@ DeblurProxy is a real-time video enhancement system that sits between a security
 
 ---
 
+
+![DeblurProxy WorkFlow](./assets/deblurproxy_workflow.png)
+
+
 ## 🛠️ Key Features
 
 - Real-time ONNX model inference using C++ and OpenCV
