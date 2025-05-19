@@ -109,6 +109,5 @@ DeblurProxy is a real-time video enhancement system that sits between a security
 
 ---
 
-## Author
-**Durga Deepak Valluri**  
+## Author: **Durga Deepak Valluri**  
 ---
