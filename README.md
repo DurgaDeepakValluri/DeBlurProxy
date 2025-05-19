@@ -35,7 +35,7 @@ DeblurProxy is a real-time video enhancement system that sits between a security
 ---
 
 
-![DeblurProxy WorkFlow](./assets/deblurproxy_workflow.png)
+![DeblurProxy WorkFlow](./Assets/deblurproxy_workflow.png)
 
 
 ## 🛠️ Key Features
