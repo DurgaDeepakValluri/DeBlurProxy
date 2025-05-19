@@ -48,18 +48,7 @@ Current surveillance solutions do not offer inline deblurring — enhancements a
 
 ## 🧠 Architecture Diagram
 
-[ Security Camera ]
-↓ (RTSP/HDMI)
-┌──────────────────────┐
-│ DeblurProxy │
-│ │
-│ + Frame Capture │
-│ + ONNX Inference │
-│ + Deblur Engine │
-│ + Live Display │
-└──────────────────────┘
-↓
-[ Monitor / Recording ]
+![DeblurProxy Architecture](./Assets/Architecture_Diagram.png)
 
 ---
 
