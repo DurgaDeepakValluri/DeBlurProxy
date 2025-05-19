@@ -63,7 +63,7 @@ DeblurProxy is a real-time video enhancement system that sits between a security
 
 ---
 
-## 🗂️ Folder Structure (Planned)
+## 🗂️ Folder Structure
 
 - `python/` – Model training and ONNX export
 - `cpp/` – Real-time inference and display logic
@@ -74,9 +74,9 @@ DeblurProxy is a real-time video enhancement system that sits between a security
 
 ---
 
-## 📅 MVP Timeline (7-Day Plan)
+## 📅 MVP Plan
 
-| Day | Task                                                 |
+| No. | Task                                                 |
 |-----|------------------------------------------------------|
 | 1   | Set up RTSP capture (Python)                         |
 | 2   | Download/test pretrained deblurring model            |
