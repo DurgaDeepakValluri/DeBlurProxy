@@ -48,7 +48,7 @@ Current surveillance solutions do not offer inline deblurring — enhancements a
 
 ## 🧠 Architecture Diagram
 
-![DeblurProxy Architecture](./Assets/Architecture_Diagram.png)
+<img src="./assets/architecture_diagram.png" alt="DeblurProxy Architecture" width="500"/>
 
 ---
 
