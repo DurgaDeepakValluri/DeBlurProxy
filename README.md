@@ -1,22 +1,16 @@
-# 🧠 DeblurProxy
+# DeblurProxy
 
 **Real-time AI middleware that deblurs blurry security camera footage before it reaches the screen or storage.**
 
 ---
 
-## 🚧 Project Status
-
-**Planned** — Currently in the design and planning phase. Development to begin soon.
-
----
-
-## 🔍 Overview
+## Overview
 
 DeblurProxy is a real-time video enhancement system that sits between a security camera and a display or recording system. It intercepts RTSP or HDMI video feeds, processes them using a deep learning model to remove motion blur, and outputs the improved stream for monitoring or storage — all in real time.
 
 ---
 
-## 🎯 Problem It Solves
+## Problem It Solves
 
 - Motion blur during fast movement (e.g., theft, running)
 - Low-light blur at night
@@ -25,7 +19,7 @@ DeblurProxy is a real-time video enhancement system that sits between a security
 
 ---
 
-## 🚀 Goals
+## Goals
 
 - Capture video stream via RTSP or HDMI
 - Deblur frames in real time using an AI model
@@ -49,7 +43,7 @@ DeblurProxy is a real-time video enhancement system that sits between a security
 
 ---
 
-## ⚙️ Tech Stack
+## Tech Stack
 
 | Component           | Tool / Library            |
 |--------------------|---------------------------|
@@ -63,7 +57,7 @@ DeblurProxy is a real-time video enhancement system that sits between a security
 
 ---
 
-## 🗂️ Folder Structure
+## Folder Structure
 
 - `python/` – Model training and ONNX export
 - `cpp/` – Real-time inference and display logic
@@ -74,7 +68,7 @@ DeblurProxy is a real-time video enhancement system that sits between a security
 
 ---
 
-## 📅 MVP Plan
+## MVP Plan
 
 | No. | Task                                                 |
 |-----|------------------------------------------------------|
@@ -88,7 +82,7 @@ DeblurProxy is a real-time video enhancement system that sits between a security
 
 ---
 
-## 📌 Use Cases
+## Use Cases
 
 - Retail stores needing clear security footage
 - Police departments with bodycam feeds
@@ -99,7 +93,7 @@ DeblurProxy is a real-time video enhancement system that sits between a security
 
 ---
 
-## 🔮 Future Enhancements
+## Future Enhancements
 
 - HDMI pass-through support with capture cards
 - GPU optimization for Jetson, NVIDIA boards, or Coral TPU
